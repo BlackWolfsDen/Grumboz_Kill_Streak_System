@@ -6,12 +6,14 @@ print("\n-----------------------------------")
 print("Grumboz Kill Streak loading.")
 
 Ann = {
-	[5] = "has reached noob status with 5 kills.",
-	[10] = "is warming up and has reached 10 kills.",
-	[25] = "The WarLord has reached 25 kills.",
-	[50] = "has caused a blood bath by slaughtering 50 players.",
-	[75] = "`The Chaotic` is litteraly standing in his victims blood with 75 kills.",
-	[100] = "`The Reaper` has devistated the realm with 100 victims."
+	[5] = "`The Boring` has earned with 5 kills.",
+	[10] = "`The Noob` is warming up with 10 kills.",
+	[25] = "`The War Machine` has reached 25 kills.",
+	[50] = "`The Widow Maker` has caused a blood bath by slaughtering 50 players.",
+	[75] = "`The WarLord` walks thru the battlefield drenched with the blood of 75 victims.",
+	[100] = "`The Chaotic` is litteraly standing in his victims blood with 100 kills.",
+	[125] = "`The Reaper` has devistated the realm with 125 victims.",
+	[150] = "`The Destroyer of Worlds` Stands atop a pile of victims with 150 kills."
 		}
 
 function StreakKill(event, killer, killed)

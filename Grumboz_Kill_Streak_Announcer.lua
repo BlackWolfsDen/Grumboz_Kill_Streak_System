@@ -13,20 +13,25 @@ Ann = {
 		}
 
 function StreakKill(event, killer, killed)
-Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
-	if(Ann[Streak[killer:GetName()].kills])then
-		SendWorldMessage("|cff00cc00"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills].."|r")
+
+	if(Streak[killer:GetName()].prior~=killed:GetName())then
+	
+		if(Ann[Streak[killer:GetName()].kills])then
+			Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
+			SendWorldMessage("|cff00cc00"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills].."|r")
+		end
+		if(Streak[killer:GetName()].kills)then
+			SendWorldMessage("|cffcc0000"..killed:GetName().." Has fallen to "..killer:GetName()..".|r")
+			Streak[killed:GetName()].kills = 0
+		end		
+	else
+		killer:SendBroadcastMessage("You cant kill the same player twice.")
 	end
-	if(Streak[killer:GetName()].kills)then
-		SendWorldMessage("|cffcc0000"..killed:GetName().." Has fallen to "..killer:GetName()..".|r")
-		Streak[killed:GetName()].kills = 0
-	end		
+Streak[killer:GetName()].prior = killed:GetName()
 end
 
 function StreakLogin(event, killer)
-	Streak[killer:GetName()] = {
-							kills = 0
-								}
+	Streak[killer:GetName()] = {kills = 0, prior = "none"}
 end
 
 RegisterPlayerEvent(6, StreakKill)

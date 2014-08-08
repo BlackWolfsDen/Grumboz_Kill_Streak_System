@@ -6,7 +6,7 @@ print("\n-----------------------------------")
 print("Grumboz Kill Streak loading.")
 
 Ann = {
-	[5] = "`The Boring` has earned with 5 kills.",
+	[5] = "`The Boring` has earned 5 kills.",
 	[10] = "`The Noob` is warming up with 10 kills.",
 	[25] = "`The War Machine` has reached 25 kills.",
 	[50] = "`The Widow Maker` has caused a blood bath by slaughtering 50 players.",

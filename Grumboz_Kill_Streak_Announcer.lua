@@ -15,9 +15,9 @@ Ann = {
 function StreakKill(event, killer, killed)
 
 	if(Streak[killer:GetName()].prior~=killed:GetName())then
+		Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
 	
 		if(Ann[Streak[killer:GetName()].kills])then
-			Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
 			SendWorldMessage("|cff00cc00"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills].."|r")
 		end
 		if(Streak[killer:GetName()].kills)then

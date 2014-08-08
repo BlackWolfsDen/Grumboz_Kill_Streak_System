@@ -22,7 +22,7 @@ function StreakKill(event, killer, killed)
 		Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
 	
 		if(Ann[Streak[killer:GetName()].kills])then
-			SendWorldMessage("|cff00cc00"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills].."|r")
+			SendWorldMessage("|cffcc0000"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills].."|r")
 		end
 		if(Streak[killer:GetName()].kills)then
 			SendWorldMessage("|cffcc0000"..killed:GetName().." Has fallen to "..killer:GetName()..".|r")

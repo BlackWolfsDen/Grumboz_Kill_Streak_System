@@ -36,7 +36,7 @@ Streak[killer:GetName()].prior = killed:GetName()
 end
 
 function StreakLogin(event, killer)
-	Streak[killer:GetName()] = {title = "`The Fodder`", kills = 0, prior = "none"}
+	Streak[killer:GetName()] = {title = "`The Fodder`", kills = 0, prior = ""}
 end
 
 RegisterPlayerEvent(6, StreakKill)

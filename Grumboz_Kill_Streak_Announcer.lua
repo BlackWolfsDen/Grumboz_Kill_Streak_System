@@ -1,11 +1,11 @@
 -- By Slp13at420 of EmuDevs.com --
-Streak = {};
-Ann = {};
+local Streak = {};
+local Ann = {};
 
 print("\n-----------------------------------")
 print("Grumboz Kill Streak loading.")
 
-Ann = {
+local Ann = {
 	[5] = {"`The Noob`", "has earned 5 kills."},
 	[10] = {"`The Boring`", "is warming up with 10 kills."},
 	[25] = {"`The War Machine`", "has reached 25 kills."},
@@ -17,26 +17,31 @@ Ann = {
 		}
 
 function StreakKill(event, killer, killed)
+local Kguid = killer:GetGUIDLow()
+local Vguid = victim:GetGUIDLow()
+local Kname = killer:GetName()
+local Vname = victim:GetName()
 
-	if(Streak[killer:GetName()].prior~=killed:GetName())then
-		Streak[killer:GetName()].kills = (Streak[killer:GetName()].kills + 1)
+	if(Streak[Kguid].prior~=Vname)then
+		Streak[Kguid].kills = (Streak[Kguid].kills + 1)
 	
-		if(Ann[Streak[killer:GetName()].kills])then
-			Streak[killer:GetName()].title = Ann[Streak[killer:GetName()].kills][1]
-			SendWorldMessage("|cffcc0000"..killer:GetName().." "..Ann[Streak[killer:GetName()].kills][1].." "..Ann[Streak[killer:GetName()].kills][2].."|r")
+		if(Ann[Streak[Kguid].kills])then
+			Streak[Kguid].title = Ann[Streak[Kguid].kills][1]
+			SendWorldMessage("|cffcc0000"..Kname.." "..Ann[Streak[Kguid].kills][1].." "..Ann[Streak[Kguid].kills][2].."|r")
 		end
-		if(Streak[killer:GetName()].kills)then
-			killed:SendBroadcastMessage("|cffcc0000You have fallen to "..killer:GetName().." "..Streak[killer:GetName()].title..".|r")
-			Streak[killed:GetName()].kills = 0
+		if(Streak[Kguid].kills)then
+			victim:SendBroadcastMessage("|cffcc0000You have fallen to "..Kname.." "..Streak[Kguid].title..".|r")
+			Streak[Vguid].kills = 0
 		end		
 	else
 		killer:SendBroadcastMessage("You cant kill the same player twice.")
 	end
-Streak[killer:GetName()].prior = killed:GetName()
+Streak[Kguid].prior = Vname
 end
 
 function StreakLogin(event, killer)
-	Streak[killer:GetName()] = {title = "`The Fodder`", kills = 0, prior = ""}
+local Kguid = killer:GetGUIDLow()
+	Streak[Kguid] = {title = "`The Fodder`", kills = 0, prior = ""}
 end
 
 RegisterPlayerEvent(6, StreakKill)

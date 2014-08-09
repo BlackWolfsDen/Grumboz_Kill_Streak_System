@@ -6,8 +6,8 @@ print("\n-----------------------------------")
 print("Grumboz Kill Streak loading.")
 
 local Ann = {
-	[5] = {"`The Noob`", "has earned 5 kills."},
-	[10] = {"`The Boring`", "is warming up with 10 kills."},
+	[5] = {"`The Boring`", "has earned 5 kills."},
+	[10] = {"`The Annoyance`", "is warming up with 10 kills."},
 	[25] = {"`The War Machine`", "has reached 25 kills."},
 	[50] = {"`The Widow Maker`", "has caused a blood bath by slaughtering 50 victims."},
 	[75] = {"`The WarLord`", "walks thru the battlefield drenched with the blood of 75 victims."},
@@ -41,7 +41,7 @@ end
 
 function StreakLogin(event, killer)
 local Kguid = killer:GetGUIDLow()
-	Streak[Kguid] = {title = "`The Fodder`", kills = 0, prior = ""}
+	Streak[Kguid] = {title = "`The Noob`", kills = 0, prior = ""}
 end
 
 RegisterPlayerEvent(6, StreakKill)

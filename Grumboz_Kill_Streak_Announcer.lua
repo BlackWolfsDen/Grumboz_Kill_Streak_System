@@ -2,7 +2,7 @@
 local Streak = {};
 local Ann = {};
 
-print("\n-----------------------------------")
+print("-----------------------------------")
 print("Grumboz Kill Streak loading.")
 
 local Ann = {

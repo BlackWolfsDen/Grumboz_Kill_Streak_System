@@ -16,7 +16,7 @@ local Ann = {
 	[150] = {"`The Destroyer of Worlds`", "Stands atop a pile of bodies of 150 victims."}
 		}
 
-function StreakKill(event, killer, killed)
+function StreakKill(event, killer, victim)
 local Kguid = killer:GetGUIDLow()
 local Vguid = victim:GetGUIDLow()
 local Kname = killer:GetName()

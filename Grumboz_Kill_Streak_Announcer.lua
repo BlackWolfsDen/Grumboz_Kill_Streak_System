@@ -8,6 +8,7 @@ print("Grumboz Kill Streak loading.")
 local Ann = {
 	[5] = {"`The Boring`", "has earned 5 kills."},
 	[10] = {"`The Annoyance`", "is warming up with 10 kills."},
+	[15] = {"`The Bloody`", "now has 15 kills under there belt."},
 	[25] = {"`The War Machine`", "has reached 25 kills."},
 	[50] = {"`The Widow Maker`", "has caused a blood bath by slaughtering 50 victims."},
 	[75] = {"`The WarLord`", "walks thru the battlefield drenched with the blood of 75 victims."},

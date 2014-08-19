@@ -28,7 +28,7 @@ local Vname = victim:GetName()
 	
 		if(Ann[Streak[Kguid].kills])then
 			Streak[Kguid].title = Ann[Streak[Kguid].kills][1]
-			SendWorldMessage("|cffcc0000"..Kname.." "..Ann[Streak[Kguid].kills][1].." "..Ann[Streak[Kguid].kills][2].."|r")
+			SendWorldMessage("|cffcc0000"..Kname.." "..Streak[Kguid].title.." "..Ann[Streak[Kguid].kills][2].."|r")
 		end
 		if(Streak[Kguid].kills)then
 			victim:SendBroadcastMessage("|cffcc0000You have fallen to "..Kname.." "..Streak[Kguid].title..".|r")

@@ -15,7 +15,7 @@ local Ann = {
 	[100] = {"`The Chaotic`", "is litteraly standing in his victims blood with 100 kills."},
 	[125] = {"`The Reaper`", "has devistated the realm with 125 victims."},
 	[150] = {"`The Destroyer of Worlds`", "Stands atop a pile of bodies of 150 victims."}
-		}
+		};
 
 function StreakKill(event, killer, victim)
 local Kguid = killer:GetGUIDLow()

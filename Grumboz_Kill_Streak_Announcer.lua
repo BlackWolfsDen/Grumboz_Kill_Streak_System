@@ -23,8 +23,9 @@ local Vguid = victim:GetGUIDLow()
 local Kname = killer:GetName()
 local Vname = victim:GetName()
 
-	if(Streak[Kguid].prior~=Vguid)then
+	if((Streak[Kguid].prior~=Vguid)and(Kguid~=Vguid))then
 		Streak[Kguid].kills = (Streak[Kguid].kills + 1)
+		Streak[Kguid].prior = Vguid
 	
 		if(Ann[Streak[Kguid].kills])then
 			Streak[Kguid].title = Ann[Streak[Kguid].kills][1]
@@ -35,9 +36,13 @@ local Vname = victim:GetName()
 			Streak[Vguid].kills = 0
 		end		
 	else
-		killer:SendBroadcastMessage("You cant kill the same player twice.")
+		if(Streak[Kguid].prior==Vguid)then
+			killer:SendBroadcastMessage("You cant kill the same player twice.")
+		end
+		if(Kguid==Vguid)then
+			killer:SendBroadcastMessage("Suicide doesnt pay.")
+		end
 	end
-Streak[Kguid].prior = Vguid
 end
 
 function StreakLogin(event, killer)

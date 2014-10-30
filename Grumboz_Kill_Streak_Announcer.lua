@@ -15,7 +15,7 @@ Ann = {
 	[100] = {"`The WarLord`", "walks thru the battlefield drenched with the blood of 100 victims.", 205, 302,},
 	[125] = {"`The Chaotic`", "is litteraly standing in his victims blood with 125 kills.", 206, nil,},
 	[150] = {"`The Reaper`", "has devistated the realm with 150 victims.", 207, 303,},
-	[175] = {"`The Destroyer of Worlds`", "Stands atop a pile of bodi1es of 175 victims.", 208, nil,},
+	[175] = {"`The Destroyer of Worlds`", "Stands atop a pile of bodies of 175 victims.", 208, nil,},
 	};
 
 local function StreakKill(event, killer, victim)

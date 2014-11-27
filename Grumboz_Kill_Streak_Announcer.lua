@@ -3,7 +3,7 @@ local Streak = {};
 local GuildStreak = {};
 local Ann = {};
 
-print("-----------------------------------")
+print("----------------©------------------")
 print("Grumboz Kill Streak loading.")
 
 Ann = {
